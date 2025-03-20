@@ -150,11 +150,24 @@ class TugasKuliah:
 def main():
     tugas = TugasKuliah()  # Membuat objek dari kelas TugasKuliah
 
+    menu = {
+        '1': tugas.hitungTotalBelanja,
+        '2': tugas.prediksiBilangan,
+        '3': tugas.membandingkanBilangan,
+        '4': tugas.gajiKaryawan,
+        '5': tugas.gradeNilai,
+        '6': tugas.besarKecil,
+        '7': tugas.upahPerJam,
+        '8': tugas.hargaSaputangan,
+        '9': tugas.temperatur,
+        '10': tugas.password
+    }
+
     while True:
         print("\nMenu: ")
         print("1. Menghitung total belanja")
         print("2. Genap atau ganjil")
-        print("3. Membadningkan Bilangan")
+        print("3. Membandingkan Bilangan")
         print("4. Gaji karyawan")
         print("5. Grade Nilai")
         print("6. Bilangan terbesar")
@@ -166,31 +179,14 @@ def main():
 
         pilihan = input("Masukkan pilihan: ")
 
-        if pilihan == '1':
-            tugas.hitungTotalBelanja()
-        elif pilihan == '2':
-            tugas.prediksiBilangan()
-        elif pilihan == '3':
-            tugas.membandingkanBilangan()
-        elif pilihan == '4':
-            tugas.gajiKaryawan()
-        elif pilihan == '5':
-            tugas.gradeNilai()
-        elif pilihan == '6':
-            tugas.besarKecil()
-        elif pilihan == '7':
-            tugas.upahPerJam()
-        elif pilihan == '8':
-            tugas.hargaSaputangan()
-        elif pilihan == '9':
-            tugas.temperatur()
-        elif pilihan == '10':
-            tugas.password()
-        elif pilihan == '11':
+        if pilihan == '11':
             print("Terima kasih, program selesai.")
             break
+        elif pilihan in menu:
+            menu[pilihan]()  # Memanggil fungsi sesuai pilihan
         else:
             print("Pilihan tidak valid! Silakan coba lagi.")
+
 
 
 if __name__ == "__main__":
