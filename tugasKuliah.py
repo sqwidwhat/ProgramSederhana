@@ -122,6 +122,31 @@ class TugasKuliah:
         print(f"Diskon sebesar: Rp{ttlDiskon:,.2f}".replace(',', '.'))
         print(f"Total harga setelah diskon: Rp{hargaSetelahDiskon:,.2f}".replace(',', '.'))
 
+    def temperatur(self):
+        fahrenheit = float(input("Masukan suhu (Fahrenheit): "))
+        celcius = 5 / 9 * (fahrenheit - 32)
+
+        if celcius > 30:
+            suhu = "Panas"
+        elif celcius < 25:
+            suhu = "Dingin"
+        else:
+            suhu = "Normal"
+
+        print(f"{celcius:.2f}°C \nStatus {suhu}")
+
+    def password(self):
+        sandi = input("Masukan sandi: ")
+        password = ["ANDIKA", "STMIK"]
+        item = 2
+        for i in range(item):
+            if sandi in password:
+                print("Sandi benar")
+                break
+            else:
+                print("Password salah")
+                sandi = input("Coba lagi: ")
+
 def main():
     tugas = TugasKuliah()  # Membuat objek dari kelas TugasKuliah
 
@@ -135,6 +160,8 @@ def main():
         print("6. Bilangan terbesar")
         print("7. Upah per jam")
         print("8. Harga sapu tangan")
+        print("9. Temperatur")
+        print("10. Password")
         print("11. Keluar")
 
         pilihan = input("Masukkan pilihan: ")
@@ -155,6 +182,10 @@ def main():
             tugas.upahPerJam()
         elif pilihan == '8':
             tugas.hargaSaputangan()
+        elif pilihan == '9':
+            tugas.temperatur()
+        elif pilihan == '10':
+            tugas.password()
         elif pilihan == '11':
             print("Terima kasih, program selesai.")
             break
